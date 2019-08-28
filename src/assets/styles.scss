@@ -1,0 +1,97 @@
+/** CUSTOM */
+html {
+  overflow-y: auto;
+}
+
+nav.navbar {
+  height: 80px;
+}
+
+.navbar-item img{
+  max-height: 4rem;
+}
+
+a.navbar-item.selected {
+  background: #00b89c;
+}
+a
+.pizza-link .card {
+  transition: all .5s;
+}
+.pizza-link .card:hover {
+  box-shadow: 0 2px 3px rgb(0, 209, 178), 0 0 0 1px #00d1b2;
+}
+.pizza-link .card .card-content .content {
+  min-height: 50px;
+}
+
+.navbar.is-primary .navbar-burger{
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.hero.is-fullheight{
+  text-shadow: 1px 1px rgba(0,0,0,.2);
+  background-blend-mode: overlay;
+  background-image: url("https://images.unsplash.com/photo-1559183533-ee5f4826d3db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1313&q=80");
+  background-color: rgba(0, 0, 0,.4);
+  background-position: center center;
+  background-size: cover;
+  min-height: calc(100vh - 80px);
+}
+
+@keyframes heroBody {
+  from {
+    margin-left: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+.hero-body {
+  animation-duration: 2s;
+  animation-name: heroBody;
+}
+
+
+@keyframes bestAnim {
+  from {
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+}
+.best{
+  position: relative;
+}
+.best::after{
+  content: "";
+  position: absolute;
+  height: 5px;
+  bottom: -2px;
+  left: 0;
+  background: rgba(255, 0, 0, 0.8);
+  animation: bestAnim 1s forwards;
+  animation-delay: 2s;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 1024px) {
+  .hero.is-fullheight {
+    min-height: calc(100vh - 56px);
+  }
+  nav.navbar {
+    height: 56px;
+  }
+  .navbar-item img{
+    max-height: 2.5rem;
+  }
+}
