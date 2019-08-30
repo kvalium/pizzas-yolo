@@ -1,17 +1,17 @@
-import * as pizzaActions from "../actions";
+import * as cartActions from "../actions";
 
 export const testCases = [
   {
     description:
       "returns expected action when Flush cart action creator is called",
-    actionCreator: pizzaActions.flushCart(),
+    actionCreator: cartActions.flushCart(),
     expectedAction: {
       type: "FLUSH_CART"
     }
   },
   {
     description: "returns expected action when product added to cart",
-    actionCreator: pizzaActions.addProductToCart(10),
+    actionCreator: cartActions.addProductToCart(10),
     expectedAction: {
       type: "ADD_PRODUCT_TO_CART",
       product: 10
@@ -19,7 +19,7 @@ export const testCases = [
   },
   {
     description: "returns expected action when product added to cart",
-    actionCreator: pizzaActions.addProductToCart(),
+    actionCreator: cartActions.addProductToCart(),
     expectedAction: {
       type: "ADD_PRODUCT_TO_CART",
       product: undefined
