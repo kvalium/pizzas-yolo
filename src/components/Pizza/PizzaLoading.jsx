@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PizzaLoading() {
+export function PizzaLoading() {
   return (
     <>
       <h1 className="title is-h1 has-text-centered is-italic ">
@@ -12,3 +12,5 @@ export default function PizzaLoading() {
     </>
   );
 }
+
+export default PizzaLoading;
