@@ -15,21 +15,15 @@ class PizzaListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filteredPizzas: [],
-      loading: true,
+      filteredPizzas: this.props.pizzas,
+      loading: this.props.pizzas.length === 0,
       showFilterLabel: false
     };
   }
 
   componentDidMount() {
     // retrieve pizzas from the store if possible
-    if (this.props.pizzas.length > 0) {
-      this.setState({
-        filteredPizzas: this.props.pizzas,
-        loading: false
-      });
-      return;
-    }
+    if (this.props.pizzas.length > 0) return;
     // fetch pizzas from backend
     fetchPizzas().then(pizzas => {
       this.props.appendPizzaList(pizzas);
